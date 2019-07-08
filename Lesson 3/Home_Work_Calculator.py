@@ -9,10 +9,8 @@ elif z == "-":
     z = x - y
     print ("="+str(z))
 elif z == "*":
-    if int(y) != 0:
-        print("=" + str(z))
-    else:
-     print("Division by zero!")
+    z = x*y
+    print ("=" + str(z))
 elif z == "/":
     z = x/y
     print ("=" + str(z))
