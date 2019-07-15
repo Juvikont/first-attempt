@@ -1,18 +1,26 @@
 print('Welcome to Calculator')
 x = float(input("Please provide the first number:"))
-y = float(input("Please provide the second number:"))
 z = input("Please choose the operation: (+), (-), (*), (/)")
-if z == "+":
-    z = x + y
-    print ("=" + str(z))
-elif z == "-":
-    z = x - y
-    print ("="+str(z))
-elif z == "*":
-    z = x*y
-    print ("=" + str(z))
-elif z == "/":
-    z = x/y
-    print ("=" + str(z))
-else:
-    print ("Wrong operation!")
+y = float(input("Please provide the second number:"))
+value = 0
+while True:
+    if z == "+":
+        value += x + y
+    elif z == "-":
+        value += x - y
+
+    elif z == "*":
+        value += x * y
+    elif z == "/":
+        value += x / y
+
+    else:
+        print("Wrong operation!")
+    a = input('Хотите ввести еще числа?y/n ')
+    if a == str('y'):
+        x = float(input("Please provide the first number:"))
+        z = input('Please choose the operation: (+), (-), (*), (/)')
+        y = float(input("Please provide the second number:"))
+    else:
+        break
+print(value)
