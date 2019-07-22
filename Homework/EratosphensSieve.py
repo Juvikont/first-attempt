@@ -11,9 +11,9 @@
 
 x = int(input('Введите число: '))
 sieve = list(range(x + 1))
-for step in sieve:
-    if step > 1:
-        for y in range(step + step, len(sieve), step):
-            sieve[y] = 0
-
+for i in sieve:
+    if i > 1:
+        for x in range(i + i, len(sieve), i):
+            sieve[x] = 0
+# comment
 print(sieve)
