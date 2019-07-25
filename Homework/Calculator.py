@@ -5,7 +5,7 @@ while True:
         if ch in ('+', '-', '/', '*'):
             # append all numbers to array not include the character
             tokens.append(float(s[:index]))
-            # append charcter to array
+            # append character to array
             tokens.append(s[index])
             # "25+32*2"
             s = s[index + 1:]
@@ -13,30 +13,26 @@ while True:
     else:
         tokens.append(float(s))
         break
-# search for multiply
+# search for multiply/devide
 for index in range(len(tokens) - 1, 0, -1):
-    # value from array uder index
+    # value from array under index
     value = tokens[index]
     if value == '*':
         tokens[index - 1] = tokens[index - 1] * tokens[index + 1]
+        del tokens[index:index + 2]
+    elif value == '/':
+        tokens[index - 1] = tokens[index - 1] / tokens[index + 1]
         # i+2 is a separate expression
         del tokens[index:index + 2]
-# search for divide
-for index in range(len(tokens) - 1, 0, -1):
-    value = tokens[index]
-    if value == '/':
-        tokens[index - 1] = tokens[index - 1] / tokens[index + 1]
-        del tokens[index:index + 2]
-# search for plus
+# search for plus/minus
 for index in range(len(tokens) - 1, 0, -1):
     value = tokens[index]
     if value == '+':
         tokens[index - 1] = tokens[index - 1] + tokens[index + 1]
         del tokens[index:index + 2]
-# search for minus
-for index in range(len(tokens) - 1, 0, -1):
-    value = tokens[index]
-    if value == '-':
+    elif value == '-':
         tokens[index - 1] = tokens[index - 1] - tokens[index + 1]
         del tokens[index:index + 2]
+
 print(tokens)
+
