@@ -19,18 +19,27 @@
 #             break
 # print(fib)
 
-def f():
-    x = 1
-    y = 1
-    yield x
-    yield y
-    n=0
-    while n<10:
-        x, y = y, x + y
-        n+=1
-        yield y
+n = int(input('Введите число: '))
+fib = [0, 1]
+for y in range(n):
+    final_number = list(*map(lambda x: fib[y-1]+ fib[y-2],fib))
+print(fib)
 
 
-i = 0
-for i in f():
-    print(i)
+
+
+# def f():
+#     x = 1
+#     y = 1
+#     yield x
+#     yield y
+#     n=0
+#     while n<10:
+#         x, y = y, x + y
+#         n+=1
+#         yield y
+#
+#
+# i = 0
+# for i in f():
+#     print(i)

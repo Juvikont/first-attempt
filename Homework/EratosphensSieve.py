@@ -15,5 +15,5 @@ for i in sieve:
     if i > 1:
         for x in range(i + i, len(sieve), i):
             sieve[x] = 0
-# comment
 print(sieve)
+

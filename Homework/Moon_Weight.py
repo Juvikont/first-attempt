@@ -9,7 +9,7 @@ years = int(stdin.readline())
 
 
 def moon(weight, n, years):
-    moon_weight = 0
+    n = 0.165
     for i in range(1, years + 1):
         moon_weight = weight * n
         weight += 1
