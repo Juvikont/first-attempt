@@ -1,8 +1,8 @@
 import math as m
 
-a = float(input('Введите A: '))
-b = float(input('Введите В: '))
-c = float(input('Введите С: '))
+a = int(input('Введите A: '))
+b = int(input('Введите В: '))
+c = int(input('Введите С: '))
 
 if (a + b >= c) and (b + c >= a) and (a + c >= b):
     print('Это треугольник! ')

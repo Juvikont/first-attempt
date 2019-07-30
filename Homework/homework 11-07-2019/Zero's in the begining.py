@@ -10,4 +10,4 @@ for index in range(len(x) - 1, 0, -1):
     if x[index] == 0:
         final.append(0)
         del x[index]
-print(final + x)
+print(final+x)
