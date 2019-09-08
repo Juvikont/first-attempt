@@ -61,7 +61,6 @@ def add_car():
     car.year = input('Year: ')
     return car
 
-
 Accord = Car(make='Honda', model='Accord', tittle="Salvage")
 Accord.type = 'Sedan'
 Accord.color = 'Red'
@@ -98,10 +97,11 @@ x = [Accord, Passat, Golf, Mustang]
 
 while True:
     print('Menu: ')
-    print('1. Show auto\'s: ')
-    print('2. Vehicle finder: ')
-    print('3. Add car: ')
-    print('4. Delete car: ')
+    print('1. Show auto\'s ')
+    print('2. Vehicle finder ')
+    print('3. Add car ')
+    print('4. Delete car ')
+    print('5. Quit ')
     choice = input("What you want to do?: ")
     if choice == '1':
         output(x)
@@ -111,6 +111,8 @@ while True:
         x.append(add_car())
     elif choice == '4':
         delete_car(x)
+    elif choice == '5':
+        break
 
 
 # for i in x:
