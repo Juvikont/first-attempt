@@ -1,4 +1,5 @@
 from datetime import date as d
+from Saloon.database import get_services
 
 print('Welcome to Saloon!')
 
@@ -44,8 +45,9 @@ def output(services):
 def money(incomes):
     _sum = 0
     for income in incomes:
-        _sum = income.cash
-        return _sum
+        int(income.cash)
+        _sum = _sum = _sum + int(income.cash)
+    return print(_sum)
 
 
 def search_service(services):
@@ -64,14 +66,6 @@ def add_service():
     return value
 
 
-def money(incomes):
-    _sum = 0
-    for income in incomes:
-        int(income.cash)
-        _sum = sum(income.cash)
-    return _sum
-
-
 Box_Haircut = Services(sex='Men\'s', service='Haircut', name='"Box"', price='50$')
 Half_Box_Haircut = Services(sex='Men\'s', service='Haircut', name='"Half-Box"', price='45$')
 Natural_Coloring = Services(sex='Female\'s', name='"Natural"', service='Coloring', price='75$')
@@ -84,47 +78,60 @@ Classic_Massage_60_minutes = Services(sex='Body', service='Massage', name='60 Mi
 Service_Names = [Box_Haircut, Half_Box_Haircut, Natural_Coloring, Blond_Coloring, Strong_Bob, Honolulu,
                  Classic_Massage_30_minutes, Classic_Massage_60_minutes]
 
+
+# pricing = [Services(sex='Men\'s', service='Haircut', name='"Box"', price='50$'),
+#            Services(sex='Men\'s', service='Haircut', name='"Half-Box"', price='45$'),
+#            Services(sex='Female\'s', name='"Natural"', service='Coloring', price='75$'),
+#            Services(sex='Female\'s', name='"Blond"', service='Coloring', price='30$'),
+#            Services(sex='Female\'s', service='Haircut', name='"Strong-Bob"', price='70$'),
+#            Services(sex='Female\'s', service='Haircut', name='"Honolulu"', price='60$'),
+#            Services(sex='Body', service='Massage', name='30 Minutes', price='30$'),
+#            Services(sex='Body', service='Massage', name='60 Minutes', price='55$')]
+
+
+
+
 Customers = []
 
-while True:
-    print('Our service\'s ')
-    print('1. Men\'s Haircut\'s ')
-    print('2. Women\'s Haircut\'s ')
-    print('3. Coloring ')
-    print('4. Massage ')
-    print('5. Search service')
-    print('6. Add the service')
-    print('7. Add customer  ')
-    print('8. Customers book')
-    print('9. End of the day')
-    choice = input("What you want to do?: ")
-    if choice == '1':
-        print('1.1 Box Haircut')
-        Box_Haircut.info()
-        print('1.1 Half-Box Haircut')
-        Half_Box_Haircut.info()
-    if choice == '2':
-        print('2.1 Strong Bob')
-        Strong_Bob.info()
-        print('2.2 Honolulu')
-        Honolulu.info()
-    if choice == '3':
-        print('3.1 Natural Coloring')
-        Natural_Coloring.info()
-        print('3.2 Blond Coloring')
-        Blond_Coloring.info()
-    if choice == '4':
-        print('4.1 30min Massage')
-        Classic_Massage_30_minutes.info()
-        print('4.2 60min Massage')
-        Classic_Massage_60_minutes.info()
-    if choice == '5':
-        search_service(Service_Names)
-    if choice == '6':
-        Service_Names.append(add_service())
-    if choice == '7':
-        Customers.append(add_journal())
-    if choice == '8':
-        output(Customers)
-    if choice == '9':
-        money(Customers)
+# while True:
+#     print('Our service\'s ')
+#     print('1. Men\'s Haircut\'s ')
+#     print('2. Women\'s Haircut\'s ')
+#     print('3. Coloring ')
+#     print('4. Massage ')
+#     print('5. Search service')
+#     print('6. Add the service')
+#     print('7. Add customer  ')
+#     print('8. Customers book')
+#     print('9. End of the day')
+#     choice = input("What you want to do?: ")
+#     if choice == '1':
+#         print('1.1 Box Haircut')
+#         Box_Haircut.info()
+#         print('1.1 Half-Box Haircut')
+#         Half_Box_Haircut.info()
+#     if choice == '2':
+#         print('2.1 Strong Bob')
+#         Strong_Bob.info()
+#         print('2.2 Honolulu')
+#         Honolulu.info()
+#     if choice == '3':
+#         print('3.1 Natural Coloring')
+#         Natural_Coloring.info()
+#         print('3.2 Blond Coloring')
+#         Blond_Coloring.info()
+#     if choice == '4':
+#         print('4.1 30min Massage')
+#         Classic_Massage_30_minutes.info()
+#         print('4.2 60min Massage')
+#         Classic_Massage_60_minutes.info()
+#     if choice == '5':
+#         search_service(Service_Names)
+#     if choice == '6':
+#         Service_Names.append(add_service())
+#     if choice == '7':
+#         Customers.append(add_journal())
+#     if choice == '8':
+#         output(Customers)
+#     if choice == '9':
+#         money(Customers)
